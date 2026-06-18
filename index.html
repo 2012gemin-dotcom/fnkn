@@ -1,17 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Kateqoriyalar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sekil</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #232733;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        .Konteyner {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 20px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .Sol-Teref {
+            display: grid;
+            grid-template-rows: 1.2fr 1fr;
+            gap: 20px;
+        }
+
+        .Alt-Bloklar {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 20px;
+        }
+
+        .Blok {
+            border-radius: 12px;
+            transition: transform 0.2s ease;
+        }
+
+        .Blok:hover {
+            transform: scale(1.01);
+        }
+
+        .Ust-Girmizi {
+            background-color: #e0665c;
+            min-height: 180px;
+        }
+
+        .Alt-Yasil-1 {
+            background-color: #559e84;
+            min-height: 150px;
+        }
+
+        .Alt-Yasil-2 {
+            background-color: #65bfa1;
+            min-height: 150px;
+        }
+
+        .Sag-Narinci {
+            background-color: #f0a36b;
+            grid-column: 2;
+            grid-row: 1 / span 2;
+        }
+
+        @media (max-width: 768px) {
+            .Konteyner {
+                grid-template-columns: 1fr;
+            }
+            .Sag-Narinci {
+                grid-column: 1;
+                grid-row: auto;
+                min-height: 200px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <div style="display: flex; gap: 20px;">
-        <div style="background: #bca0dc; padding: 40px; flex: 1; text-align: center;">Smartphones</div>
-        <div style="background: #bca0dc; padding: 40px; flex: 1; text-align: center;">Headphones</div>
-        <div style="background: #bca0dc; padding: 40px; flex: 1; text-align: center;">Laptops</div>
-        <div style="background: #bca0dc; padding: 40px; flex: 1; text-align: center;">Computers</div>
-        <div style="background: #bca0dc; padding: 40px; flex: 1; text-align: center;">Accessories</div>
+    <div class="Konteyner">
+        <div class="Sol-Teref">
+            <div class="Blok Ust-Girmizi"></div>
+            <div class="Alt-Bloklar">
+                <div class="Blok Alt-Yasil-1"></div>
+                <div class="Blok Alt-Yasil-2"></div>
+            </div>
+        </div>
+        <div class="Blok Sag-Narinci"></div>
     </div>
 
 </body>
