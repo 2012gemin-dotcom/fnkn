@@ -3,98 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sekil</title>
+    <title>sekil</title>
     <style>
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #232733;
+            background-color: #222;
+            padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            font-family: sans-serif;
-            padding: 20px;
         }
-
-        .Konteyner {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            grid-template-rows: auto auto;
-            gap: 20px;
+        .dashboard {
             width: 100%;
-            max-width: 900px;
-        }
-
-        .Sol-Teref {
+            max-width: 1200px;
             display: grid;
-            grid-template-rows: 1.2fr 1fr;
-            gap: 20px;
+            
+            grid-template-columns: repeat(6, minmax(100px, 1fr));
+            
+            grid-auto-rows: 140px;
+            gap: 15px;
         }
 
-        .Alt-Bloklar {
-            display: grid;
-            grid-template-columns: 1fr 1.1fr;
-            gap: 20px;
+       
+        .card {
+            border-radius: 8px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Yazıları aşağı bərkidir */
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
-        .Blok {
-            border-radius: 12px;
-            transition: transform 0.2s ease;
+        
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .Blok:hover {
-            transform: scale(1.01);
+       
+        .leaderboard {
+            grid-column: span 2;
+            grid-row: span 2;
+            background-color: #e0e0e0;
+            color: #333;
         }
 
-        .Ust-Girmizi {
-            background-color: #e0665c;
-            min-height: 180px;
+       
+        .food {
+            grid-column: span 3;
+            background-color: #2ecc71;
         }
 
-        .Alt-Yasil-1 {
-            background-color: #559e84;
-            min-height: 150px;
+       
+        .general-knowledge {
+            grid-column: span 1;
+            background-color: #f1c40f;
+            color: #333;
         }
 
-        .Alt-Yasil-2 {
-            background-color: #65bfa1;
-            min-height: 150px;
+       
+        .history {
+            grid-column: span 4;
+            background-color: #3498db;
         }
 
-        .Sag-Narinci {
-            background-color: #f0a36b;
-            grid-column: 2;
-            grid-row: 1 / span 2;
+      
+        .geography {
+            grid-column: span 2;
+            grid-row: span 2;
+            background-color: #e74c3c;
         }
 
-        @media (max-width: 768px) {
-            .Konteyner {
-                grid-template-columns: 1fr;
-            }
-            .Sag-Narinci {
-                grid-column: 1;
-                grid-row: auto;
-                min-height: 200px;
-            }
+       
+        .entertainment {
+            grid-column: span 2;
+            background-color: #9b59b6;
+        }
+
+      
+        .sports {
+            grid-column: span 1;
+            background-color: #e67e22;
+        }
+
+        .science {
+            grid-column: span 3;
+            background-color: #1abc9c;
+        }
+
+        
+        .music {
+            grid-column: span 1;
+            background-color: #34495e;
+        }
+
+        
+        .profile {
+            grid-column: span 2;
+            background-color: #7f8c8d;
         }
     </style>
 </head>
 <body>
 
-    <div class="Konteyner">
-        <div class="Sol-Teref">
-            <div class="Blok Ust-Girmizi"></div>
-            <div class="Alt-Bloklar">
-                <div class="Blok Alt-Yasil-1"></div>
-                <div class="Blok Alt-Yasil-2"></div>
+    <div class="dashboard">
+        
+        <div class="card leaderboard">
+            <div class="card-footer">
+                <span>Leaderboard</span>
+                <span>➔</span>
             </div>
         </div>
-        <div class="Blok Sag-Narinci"></div>
+
+        <div class="card food">
+            <div class="card-footer">
+                <span>Food & Drink</span>
+                <span>▶</span>
+            </div>
+        </div>
+
+        <div class="card general-knowledge">
+            <div class="card-footer">
+                <span>General Knowledge</span>
+                <span>▶</span>
+            </div>
+        </div>
+
+        <div class="card history">
+            <div class="card-footer">
+                <span>History</span>
+                <span>▶</span>
+            </div>
+        </div>
+
+        <div class="card geography">
+            <div class="card-footer">
+                <span>Geography</span>
+                <span>▶</span>
+            </div>
+        </div>
+
+        <div class="card entertainment">
+            <div class="card-footer">
+                <span>Entertainment</span>
+                <span>▶</span>
+            </div>
+        </div>
+
+        <div class="card sports">
+            <div class="card-footer">
+                <span>Sports</span>
+                <span>▶</span>
+            </div>
+        </div>
+
+        <div class="card science">
+            <div class="card-footer">
+                <span>Science and Nature</span>
+                <span>▶</span>
+            </div>
+        </div>
+
+        <div class="card music">
+            <div class="card-footer">
+                <span>Music</span>
+                <span>▶</span>
+            </div>
+        </div>
+
+        <div class="card profile">
+            <div class="card-footer">
+                <span>Profile</span>
+                <span>➔</span>
+            </div>
+        </div>
+
     </div>
 
 </body>
