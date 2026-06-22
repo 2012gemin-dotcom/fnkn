@@ -3,196 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sekil</title>
+    <title>fiqurlar</title>
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #222;
-            padding: 20px;
+            background-color: #1a1a1a;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-        }
-        .dashboard {
-            width: 100%;
-            max-width: 1200px;
-            display: grid;
-            
-            grid-template-columns: repeat(6, minmax(100px, 1fr));
-            
-            grid-auto-rows: 140px;
-            gap: 15px;
-        }
-
-       
-        .card {
-            border-radius: 8px;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end; /* Yazıları aşağı bərkidir */
             padding: 20px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
+        /* Əsas çərçivə və tor quruluşu (Grid) */
+        .grid-container {
+            display: grid;
+            /* Ölçüləri bilərəkdən fərqli və nizamsız qoyulub */
+            grid-template-columns: 1.2fr 1.1fr 1.8fr 1.1fr;
+            grid-template-rows: 1.3fr 1.5fr 1.2fr;
+            gap: 15px; /* Fiqurlar arasındakı qara boşluqlar */
+            width: 100%;
+            max-width: 900px;
+            height: 450px;
+            background-color: #2c2c2c; /* Şəkildəki tünd fon rəngi */
+            padding: 15px;
+        }
+
+        /* Rəng şablonları */
+        .red    { background-color: #f0544f; }
+        .blue   { background-color: #29b6cc; }
+        .yellow { background-color: #d4b26f; }
+        .white  { background-color: #ffffff; }
+
+        /* Hər bir kvadratın grid üzərindəki yerləşməsi */
+        .box-1 { grid-column: 1; grid-row: 1 / 3; }
+        .box-2 { grid-column: 2; grid-row: 1; }
+        .box-3 { grid-column: 3 / 5; grid-row: 1; }
         
-        .card-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 14px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-       
-        .leaderboard {
-            grid-column: span 2;
-            grid-row: span 2;
-            background-color: #e0e0e0;
-            color: #333;
-        }
-
-       
-        .food {
-            grid-column: span 3;
-            background-color: #2ecc71;
-        }
-
-       
-        .general-knowledge {
-            grid-column: span 1;
-            background-color: #f1c40f;
-            color: #333;
-        }
-
-       
-        .history {
-            grid-column: span 4;
-            background-color: #3498db;
-        }
-
-      
-        .geography {
-            grid-column: span 2;
-            grid-row: span 2;
-            background-color: #e74c3c;
-        }
-
-       
-        .entertainment {
-            grid-column: span 2;
-            background-color: #9b59b6;
-        }
-
-      
-        .sports {
-            grid-column: span 1;
-            background-color: #e67e22;
-        }
-
-        .science {
-            grid-column: span 3;
-            background-color: #1abc9c;
-        }
-
+        .box-4 { grid-column: 1; grid-row: 3; }
+        .box-5 { grid-column: 2; grid-row: 2; }
+        .box-6 { grid-column: 3; grid-row: 2; }
+        .box-7 { grid-column: 4; grid-row: 2 / 4; }
         
-        .music {
-            grid-column: span 1;
-            background-color: #34495e;
-        }
-
-        
-        .profile {
-            grid-column: span 2;
-            background-color: #7f8c8d;
-        }
+        .box-8 { grid-column: 2; grid-row: 3; }
+        .box-9 { grid-column: 3; grid-row: 3; }
     </style>
 </head>
 <body>
 
-    <div class="dashboard">
-        
-        <div class="card leaderboard">
-            <div class="card-footer">
-                <span>Leaderboard</span>
-                <span>➔</span>
-            </div>
-        </div>
+    <div class="grid-container">
+        <div class="box-1 red"></div>
+        <div class="box-2 blue"></div>
+        <div class="box-3 yellow"></div>
 
-        <div class="card food">
-            <div class="card-footer">
-                <span>Food & Drink</span>
-                <span>▶</span>
-            </div>
-        </div>
+        <div class="box-4 white"></div>
+        <div class="box-5 yellow"></div>
+        <div class="box-6 white"></div>
+        <div class="box-7 red"></div>
 
-        <div class="card general-knowledge">
-            <div class="card-footer">
-                <span>General Knowledge</span>
-                <span>▶</span>
-            </div>
-        </div>
-
-        <div class="card history">
-            <div class="card-footer">
-                <span>History</span>
-                <span>▶</span>
-            </div>
-        </div>
-
-        <div class="card geography">
-            <div class="card-footer">
-                <span>Geography</span>
-                <span>▶</span>
-            </div>
-        </div>
-
-        <div class="card entertainment">
-            <div class="card-footer">
-                <span>Entertainment</span>
-                <span>▶</span>
-            </div>
-        </div>
-
-        <div class="card sports">
-            <div class="card-footer">
-                <span>Sports</span>
-                <span>▶</span>
-            </div>
-        </div>
-
-        <div class="card science">
-            <div class="card-footer">
-                <span>Science and Nature</span>
-                <span>▶</span>
-            </div>
-        </div>
-
-        <div class="card music">
-            <div class="card-footer">
-                <span>Music</span>
-                <span>▶</span>
-            </div>
-        </div>
-
-        <div class="card profile">
-            <div class="card-footer">
-                <span>Profile</span>
-                <span>➔</span>
-            </div>
-        </div>
-
+        <div class="box-8 red"></div>
+        <div class="box-9 blue"></div>
     </div>
 
 </body>
